@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Properties\Client.lsml" Checksum="730BF568644BD9D04BB3C071231F479970F3869BD2EC2DCD22E4BBD69ADCC928" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Properties\Proxies.lsml" Checksum="0763CF02BFFEBFCB747AD978BD20AA0A716F911405A7E65E3F173990C42125BF" />
+  </Documents>
+</ModelDocumentManifest>
