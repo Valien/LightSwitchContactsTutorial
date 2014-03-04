@@ -24,6 +24,7 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Hidden />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -48,6 +49,8 @@
         PropertyType=":Date?">
         <EntityProperty.Attributes>
           <NotSearchable />
+          <Range
+            Minimum="01/01/1900" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -55,7 +58,13 @@
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
-            Value="255" />
+            Value="1" />
+          <SupportedValue
+            DisplayName="Female"
+            Value="F" />
+          <SupportedValue
+            DisplayName="Male"
+            Value="M" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

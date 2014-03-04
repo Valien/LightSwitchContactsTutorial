@@ -8,7 +8,7 @@
     <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="FirstName" Type="Edm.String" MaxLength="255" />
     <Property Name="BirthDate" Type="Edm.DateTime" />
-    <Property Name="Gender" Type="Edm.String" MaxLength="255" />
+    <Property Name="Gender" Type="Edm.String" MaxLength="1" />
     <Property Name="Phone" Type="Edm.String" MaxLength="255" />
     <Property Name="Email" Type="Edm.String" MaxLength="255" />
     <Property Name="Address1" Type="Edm.String" MaxLength="255" />

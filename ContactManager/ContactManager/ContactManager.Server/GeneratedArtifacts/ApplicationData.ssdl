@@ -11,7 +11,7 @@
     <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
     <Property Name="BirthDate" Type="datetime" />
-    <Property Name="Gender" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="1" />
     <Property Name="Phone" Type="nvarchar" MaxLength="255" />
     <Property Name="Email" Type="nvarchar" MaxLength="255" />
     <Property Name="Address1" Type="nvarchar" MaxLength="255" />

@@ -3,5 +3,7 @@
   <Documents>
     <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Properties\Client.lsml" Checksum="730BF568644BD9D04BB3C071231F479970F3869BD2EC2DCD22E4BBD69ADCC928" />
     <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Properties\Proxies.lsml" Checksum="0763CF02BFFEBFCB747AD978BD20AA0A716F911405A7E65E3F173990C42125BF" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\BrowseContacts.lsml" Checksum="5B87ED9A66D9101661E71803A0FEC5120485C592626741F94242604F30C6F8B0" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\AddEditContact.lsml" Checksum="0509A8CA22C3214A9BA53D50E51409AC21E17DB960103D72212F003C636961F0" />
   </Documents>
 </ModelDocumentManifest>
