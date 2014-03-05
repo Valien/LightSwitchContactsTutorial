@@ -2045,9 +2045,231 @@
           ]
         },
         {
+          "id": "EmailAddress*",
+          "name": "EmailAddress*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "EmailAddress" }
+        },
+        {
+          "id": "CollectionView$EmailAddress",
+          "name": "CollectionView$EmailAddress",
+          "kind": "CollectionView",
+          "elementType": { "__id": "EmailAddress" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$EmailAddress/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "EmailAddress" }
+            },
+            {
+              "id": "CollectionView$EmailAddress/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "EmailAddress" }
+            },
+            {
+              "id": "CollectionView$EmailAddress/Methods[editSelected]",
+              "name": "editSelected"
+            },
+            {
+              "id": "CollectionView$EmailAddress/Methods[deleteSelected]",
+              "name": "deleteSelected"
+            },
+            {
+              "id": "CollectionView$EmailAddress/Methods[removeSelected]",
+              "name": "removeSelected"
+            },
+            {
+              "id": "CollectionView$EmailAddress/Methods[refresh]",
+              "name": "refresh"
+            },
+            {
+              "id": "CollectionView$EmailAddress/Methods[viewSelected]",
+              "name": "viewSelected"
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$EmailAddress/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "EmailAddress" }
+            }
+          ]
+        },
+        {
+          "id": "PhoneNumber*",
+          "name": "PhoneNumber*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "PhoneNumber" }
+        },
+        {
+          "id": "CollectionView$PhoneNumber",
+          "name": "CollectionView$PhoneNumber",
+          "kind": "CollectionView",
+          "elementType": { "__id": "PhoneNumber" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$PhoneNumber/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "PhoneNumber" }
+            },
+            {
+              "id": "CollectionView$PhoneNumber/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "PhoneNumber" }
+            },
+            {
+              "id": "CollectionView$PhoneNumber/Methods[editSelected]",
+              "name": "editSelected"
+            },
+            {
+              "id": "CollectionView$PhoneNumber/Methods[deleteSelected]",
+              "name": "deleteSelected"
+            },
+            {
+              "id": "CollectionView$PhoneNumber/Methods[removeSelected]",
+              "name": "removeSelected"
+            },
+            {
+              "id": "CollectionView$PhoneNumber/Methods[refresh]",
+              "name": "refresh"
+            },
+            {
+              "id": "CollectionView$PhoneNumber/Methods[viewSelected]",
+              "name": "viewSelected"
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$PhoneNumber/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "PhoneNumber" }
+            }
+          ]
+        },
+        {
+          "id": "Address*",
+          "name": "Address*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "Address" }
+        },
+        {
+          "id": "CollectionView$Address",
+          "name": "CollectionView$Address",
+          "kind": "CollectionView",
+          "elementType": { "__id": "Address" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$Address/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "Address" }
+            },
+            {
+              "id": "CollectionView$Address/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "Address" }
+            },
+            {
+              "id": "CollectionView$Address/Methods[editSelected]",
+              "name": "editSelected"
+            },
+            {
+              "id": "CollectionView$Address/Methods[deleteSelected]",
+              "name": "deleteSelected"
+            },
+            {
+              "id": "CollectionView$Address/Methods[removeSelected]",
+              "name": "removeSelected"
+            },
+            {
+              "id": "CollectionView$Address/Methods[refresh]",
+              "name": "refresh"
+            },
+            {
+              "id": "CollectionView$Address/Methods[viewSelected]",
+              "name": "viewSelected"
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$Address/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "Address" }
+            }
+          ]
+        },
+        {
           "id": "ApplicationData",
           "name": "ApplicationData",
           "isIntrinsic": true,
+          "associationSets":
+          [
+            {
+              "id": "ApplicationData/Members[EmailAddress_Contacts]",
+              "name": "EmailAddress_Contacts",
+              "association": { "__id": "EmailAddress_Contact" },
+              "ends":
+              [
+                {
+                  "properties": [ "EmailAddress_Contact" ],
+                  "id": "ApplicationData/Members[EmailAddress_Contacts]/Members[EmailAddress]",
+                  "name": "EmailAddress",
+                  "entitySet": { "__id": "ApplicationData/Members[EmailAddresses]" }
+                },
+                {
+                  "properties": [ "Id" ],
+                  "id": "ApplicationData/Members[EmailAddress_Contacts]/Members[Contact]",
+                  "name": "Contact",
+                  "entitySet": { "__id": "ApplicationData/Members[Contacts]" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[PhoneNumber_Contacts]",
+              "name": "PhoneNumber_Contacts",
+              "association": { "__id": "PhoneNumber_Contact" },
+              "ends":
+              [
+                {
+                  "properties": [ "PhoneNumber_Contact" ],
+                  "id": "ApplicationData/Members[PhoneNumber_Contacts]/Members[PhoneNumber]",
+                  "name": "PhoneNumber",
+                  "entitySet": { "__id": "ApplicationData/Members[PhoneNumbers]" }
+                },
+                {
+                  "properties": [ "Id" ],
+                  "id": "ApplicationData/Members[PhoneNumber_Contacts]/Members[Contact]",
+                  "name": "Contact",
+                  "entitySet": { "__id": "ApplicationData/Members[Contacts]" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[Address_Contacts]",
+              "name": "Address_Contacts",
+              "association": { "__id": "Address_Contact" },
+              "ends":
+              [
+                {
+                  "properties": [ "Address_Contact" ],
+                  "id": "ApplicationData/Members[Address_Contacts]/Members[Address]",
+                  "name": "Address",
+                  "entitySet": { "__id": "ApplicationData/Members[Addresses]" }
+                },
+                {
+                  "properties": [ "Id" ],
+                  "id": "ApplicationData/Members[Address_Contacts]/Members[Contact]",
+                  "name": "Contact",
+                  "entitySet": { "__id": "ApplicationData/Members[Contacts]" }
+                }
+              ]
+            }
+          ],
           "entitySets":
           [
             {
@@ -2058,6 +2280,33 @@
               "canUpdate": true,
               "elementType": { "__id": "Contact" },
               "entityType": { "__id": "Contact" }
+            },
+            {
+              "id": "ApplicationData/Members[EmailAddresses]",
+              "name": "EmailAddresses",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "EmailAddress" },
+              "entityType": { "__id": "EmailAddress" }
+            },
+            {
+              "id": "ApplicationData/Members[PhoneNumbers]",
+              "name": "PhoneNumbers",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "PhoneNumber" },
+              "entityType": { "__id": "PhoneNumber" }
+            },
+            {
+              "id": "ApplicationData/Members[Addresses]",
+              "name": "Addresses",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "Address" },
+              "entityType": { "__id": "Address" }
             }
           ],
           "queryOperations":
@@ -2095,6 +2344,120 @@
               [
                 {
                   "id": "ApplicationData/Members[Contacts_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[EmailAddresses_Single]",
+              "name": "EmailAddresses_Single",
+              "elementType": { "__id": "EmailAddress" },
+              "query": { "__id": "ApplicationData/Members[EmailAddresses_Single]" },
+              "returnType": { "__id": "EmailAddress" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[EmailAddresses]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[EmailAddresses_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[EmailAddresses_SingleOrDefault]",
+              "name": "EmailAddresses_SingleOrDefault",
+              "elementType": { "__id": "EmailAddress" },
+              "query": { "__id": "ApplicationData/Members[EmailAddresses_SingleOrDefault]" },
+              "returnType": { "__id": "EmailAddress" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[EmailAddresses]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[EmailAddresses_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[PhoneNumbers_Single]",
+              "name": "PhoneNumbers_Single",
+              "elementType": { "__id": "PhoneNumber" },
+              "query": { "__id": "ApplicationData/Members[PhoneNumbers_Single]" },
+              "returnType": { "__id": "PhoneNumber" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[PhoneNumbers]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[PhoneNumbers_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[PhoneNumbers_SingleOrDefault]",
+              "name": "PhoneNumbers_SingleOrDefault",
+              "elementType": { "__id": "PhoneNumber" },
+              "query": { "__id": "ApplicationData/Members[PhoneNumbers_SingleOrDefault]" },
+              "returnType": { "__id": "PhoneNumber" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[PhoneNumbers]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[PhoneNumbers_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[Addresses_Single]",
+              "name": "Addresses_Single",
+              "elementType": { "__id": "Address" },
+              "query": { "__id": "ApplicationData/Members[Addresses_Single]" },
+              "returnType": { "__id": "Address" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[Addresses]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[Addresses_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[Addresses_SingleOrDefault]",
+              "name": "Addresses_SingleOrDefault",
+              "elementType": { "__id": "Address" },
+              "query": { "__id": "ApplicationData/Members[Addresses_SingleOrDefault]" },
+              "returnType": { "__id": "Address" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[Addresses]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[Addresses_SingleOrDefault]/Parameters[Id]",
                   "name": "Id",
                   "parameterType": { "__id": ":Int32?" }
                 }
@@ -2185,67 +2548,31 @@
               ]
             },
             {
-              "id": "Contact/Properties[Phone]",
-              "name": "Phone",
-              "propertyType": { "__id": "Microsoft.LightSwitch.Extensions:PhoneNumber?" },
-              ":@MaxLength":
-              {
-                "value": 255
-              }
+              "id": "Contact/Properties[EmailAddresses]",
+              "name": "EmailAddresses",
+              "association": { "__id": "EmailAddress_Contact" },
+              "elementType": { "__id": "EmailAddress" },
+              "fromEnd": { "__id": "EmailAddress_Contact/Ends[Contact]" },
+              "propertyType": { "__id": "EmailAddress*" },
+              "toEnd": { "__id": "EmailAddress_Contact/Ends[EmailAddress]" }
             },
             {
-              "id": "Contact/Properties[Email]",
-              "name": "Email",
-              "propertyType": { "__id": "Microsoft.LightSwitch.Extensions:EmailAddress?" },
-              ":@MaxLength":
-              {
-                "value": 255
-              }
+              "id": "Contact/Properties[PhoneNumbers]",
+              "name": "PhoneNumbers",
+              "association": { "__id": "PhoneNumber_Contact" },
+              "elementType": { "__id": "PhoneNumber" },
+              "fromEnd": { "__id": "PhoneNumber_Contact/Ends[Contact]" },
+              "propertyType": { "__id": "PhoneNumber*" },
+              "toEnd": { "__id": "PhoneNumber_Contact/Ends[PhoneNumber]" }
             },
             {
-              "id": "Contact/Properties[Address1]",
-              "name": "Address1",
-              "propertyType": { "__id": ":String?" },
-              ":@MaxLength":
-              {
-                "value": 255
-              }
-            },
-            {
-              "id": "Contact/Properties[Address2]",
-              "name": "Address2",
-              "propertyType": { "__id": ":String?" },
-              ":@MaxLength":
-              {
-                "value": 255
-              }
-            },
-            {
-              "id": "Contact/Properties[City]",
-              "name": "City",
-              "propertyType": { "__id": ":String?" },
-              ":@MaxLength":
-              {
-                "value": 255
-              }
-            },
-            {
-              "id": "Contact/Properties[State]",
-              "name": "State",
-              "propertyType": { "__id": ":String?" },
-              ":@MaxLength":
-              {
-                "value": 255
-              }
-            },
-            {
-              "id": "Contact/Properties[ZIP]",
-              "name": "ZIP",
-              "propertyType": { "__id": ":String?" },
-              ":@MaxLength":
-              {
-                "value": 255
-              }
+              "id": "Contact/Properties[Addresses]",
+              "name": "Addresses",
+              "association": { "__id": "Address_Contact" },
+              "elementType": { "__id": "Address" },
+              "fromEnd": { "__id": "Address_Contact/Ends[Contact]" },
+              "propertyType": { "__id": "Address*" },
+              "toEnd": { "__id": "Address_Contact/Ends[Address]" }
             },
             {
               "id": "Contact/Properties[CreatedBy]",
@@ -2400,6 +2727,10 @@
                                 "targetParameter": { "__id": "!module/Methods[showAddEditContact]/Parameters[Contact]" }
                               }
                             }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-add"
                           }
                         ]
                       }
@@ -2472,6 +2803,560 @@
               {
                 "target": { "__id": "BrowseContacts/Properties[Contacts]/Query" }
               }
+            },
+            {
+              "id": "BrowseContacts/Properties[EmailAddresses]",
+              "name": "EmailAddresses",
+              "pageSize": 45,
+              "elementType": { "__id": "EmailAddress" },
+              "propertyType": { "__id": "CollectionView$EmailAddress" },
+              "query":
+              {
+                "id": "BrowseContacts/Properties[EmailAddresses]/Query",
+                "name": "EmailAddressesQuery",
+                "elementType": { "__id": "EmailAddress" },
+                "returnType": { "__id": "EmailAddress*" },
+                "source":
+                {
+                  "links":
+                  [
+                    {
+                      "member": { "__id": "BrowseContacts/Properties[Contacts]" }
+                    },
+                    {
+                      "member": { "__id": "CollectionView$Contact/Properties[selectedItem]" }
+                    },
+                    {
+                      "member": { "__id": "Contact/Properties[EmailAddresses]" }
+                    }
+                  ]
+                }
+              },
+              "source":
+              {
+                "target": { "__id": "BrowseContacts/Properties[EmailAddresses]/Query" }
+              }
+            },
+            {
+              "id": "BrowseContacts/Properties[PhoneNumbers]",
+              "name": "PhoneNumbers",
+              "pageSize": 45,
+              "elementType": { "__id": "PhoneNumber" },
+              "propertyType": { "__id": "CollectionView$PhoneNumber" },
+              "query":
+              {
+                "id": "BrowseContacts/Properties[PhoneNumbers]/Query",
+                "name": "PhoneNumbersQuery",
+                "elementType": { "__id": "PhoneNumber" },
+                "returnType": { "__id": "PhoneNumber*" },
+                "source":
+                {
+                  "links":
+                  [
+                    {
+                      "member": { "__id": "BrowseContacts/Properties[Contacts]" }
+                    },
+                    {
+                      "member": { "__id": "CollectionView$Contact/Properties[selectedItem]" }
+                    },
+                    {
+                      "member": { "__id": "Contact/Properties[PhoneNumbers]" }
+                    }
+                  ]
+                }
+              },
+              "source":
+              {
+                "target": { "__id": "BrowseContacts/Properties[PhoneNumbers]/Query" }
+              }
+            },
+            {
+              "id": "BrowseContacts/Properties[Addresses]",
+              "name": "Addresses",
+              "pageSize": 45,
+              "elementType": { "__id": "Address" },
+              "propertyType": { "__id": "CollectionView$Address" },
+              "query":
+              {
+                "id": "BrowseContacts/Properties[Addresses]/Query",
+                "name": "AddressesQuery",
+                "elementType": { "__id": "Address" },
+                "returnType": { "__id": "Address*" },
+                "source":
+                {
+                  "links":
+                  [
+                    {
+                      "member": { "__id": "BrowseContacts/Properties[Contacts]" }
+                    },
+                    {
+                      "member": { "__id": "CollectionView$Contact/Properties[selectedItem]" }
+                    },
+                    {
+                      "member": { "__id": "Contact/Properties[Addresses]" }
+                    }
+                  ]
+                }
+              },
+              "source":
+              {
+                "target": { "__id": "BrowseContacts/Properties[Addresses]/Query" }
+              }
+            }
+          ]
+        },
+        {
+          "__isEntityType": 1,
+          ":@SummaryProperty": { "property": { "__id": "EmailAddress/Properties[Email]" } },
+          "id": "EmailAddress",
+          "name": "EmailAddress",
+          ":@CreatedModifiedPropertiesEnabled": { },
+          "methods":
+          [
+            {
+              "id": "EmailAddress/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            },
+            {
+              "id": "EmailAddress/Methods[edit]",
+              "name": "edit"
+            },
+            {
+              "id": "EmailAddress/Methods[view]",
+              "name": "view"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "EmailAddress/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "EmailAddress/Properties[Email]",
+              "name": "Email",
+              "propertyType": { "__id": "Microsoft.LightSwitch.Extensions:EmailAddress" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "EmailAddress/Properties[EmailType]",
+              "name": "EmailType",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 25
+              },
+              ":@SupportedValue":
+              [
+                {
+                  "value": "Work"
+                },
+                {
+                  "value": "Personal"
+                }
+              ]
+            },
+            {
+              "id": "EmailAddress/Properties[Contact]",
+              "name": "Contact",
+              "association": { "__id": "EmailAddress_Contact" },
+              "elementType": { "__id": "Contact" },
+              "fromEnd": { "__id": "EmailAddress_Contact/Ends[EmailAddress]" },
+              "propertyType": { "__id": "Contact" },
+              "toEnd": { "__id": "EmailAddress_Contact/Ends[Contact]" }
+            },
+            {
+              "id": "EmailAddress/Properties[CreatedBy]",
+              "name": "CreatedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "EmailAddress/Properties[Created]",
+              "name": "Created",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "EmailAddress/Properties[ModifiedBy]",
+              "name": "ModifiedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "EmailAddress/Properties[Modified]",
+              "name": "Modified",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "EmailAddress/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@UseForConcurrency": { },
+              ":@Hidden": { },
+              ":@NotSearchable": { }
+            }
+          ]
+        },
+        {
+          "id": "EmailAddress_Contact",
+          "name": "EmailAddress_Contact",
+          "ends":
+          [
+            {
+              "id": "EmailAddress_Contact/Ends[EmailAddress]",
+              "name": "EmailAddress",
+              "multiplicity": "Many",
+              "entityType": { "__id": "EmailAddress" }
+            },
+            {
+              "id": "EmailAddress_Contact/Ends[Contact]",
+              "name": "Contact",
+              "multiplicity": "One",
+              "entityType": { "__id": "Contact" },
+              ":@DeleteRule": { "action": "Cascade" }
+            }
+          ]
+        },
+        {
+          "__isEntityType": 1,
+          ":@SummaryProperty": { "property": { "__id": "PhoneNumber/Properties[Phone]" } },
+          "id": "PhoneNumber",
+          "name": "PhoneNumber",
+          ":@CreatedModifiedPropertiesEnabled": { },
+          "methods":
+          [
+            {
+              "id": "PhoneNumber/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            },
+            {
+              "id": "PhoneNumber/Methods[edit]",
+              "name": "edit"
+            },
+            {
+              "id": "PhoneNumber/Methods[view]",
+              "name": "view"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "PhoneNumber/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "PhoneNumber/Properties[Phone]",
+              "name": "Phone",
+              "propertyType": { "__id": "Microsoft.LightSwitch.Extensions:PhoneNumber" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "PhoneNumber/Properties[PhoneType]",
+              "name": "PhoneType",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 25
+              },
+              ":@SupportedValue":
+              [
+                {
+                  "value": "Cell"
+                },
+                {
+                  "value": "Fax"
+                },
+                {
+                  "value": "Home"
+                },
+                {
+                  "value": "Work"
+                }
+              ]
+            },
+            {
+              "id": "PhoneNumber/Properties[Contact]",
+              "name": "Contact",
+              "association": { "__id": "PhoneNumber_Contact" },
+              "elementType": { "__id": "Contact" },
+              "fromEnd": { "__id": "PhoneNumber_Contact/Ends[PhoneNumber]" },
+              "propertyType": { "__id": "Contact" },
+              "toEnd": { "__id": "PhoneNumber_Contact/Ends[Contact]" }
+            },
+            {
+              "id": "PhoneNumber/Properties[CreatedBy]",
+              "name": "CreatedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "PhoneNumber/Properties[Created]",
+              "name": "Created",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "PhoneNumber/Properties[ModifiedBy]",
+              "name": "ModifiedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "PhoneNumber/Properties[Modified]",
+              "name": "Modified",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "PhoneNumber/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@UseForConcurrency": { },
+              ":@Hidden": { },
+              ":@NotSearchable": { }
+            }
+          ]
+        },
+        {
+          "id": "PhoneNumber_Contact",
+          "name": "PhoneNumber_Contact",
+          "ends":
+          [
+            {
+              "id": "PhoneNumber_Contact/Ends[PhoneNumber]",
+              "name": "PhoneNumber",
+              "multiplicity": "Many",
+              "entityType": { "__id": "PhoneNumber" }
+            },
+            {
+              "id": "PhoneNumber_Contact/Ends[Contact]",
+              "name": "Contact",
+              "multiplicity": "One",
+              "entityType": { "__id": "Contact" },
+              ":@DeleteRule": { "action": "Cascade" }
+            }
+          ]
+        },
+        {
+          "__isEntityType": 1,
+          ":@SummaryProperty": { "property": { "__id": "Address/Properties[AddressType]" } },
+          "id": "Address",
+          "name": "Address",
+          ":@CreatedModifiedPropertiesEnabled": { },
+          "methods":
+          [
+            {
+              "id": "Address/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            },
+            {
+              "id": "Address/Methods[edit]",
+              "name": "edit"
+            },
+            {
+              "id": "Address/Methods[view]",
+              "name": "view"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "Address/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Address/Properties[AddressType]",
+              "name": "AddressType",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 25
+              },
+              ":@SupportedValue":
+              [
+                {
+                  "value": "Home"
+                },
+                {
+                  "value": "Work"
+                },
+                {
+                  "value": "Other"
+                }
+              ]
+            },
+            {
+              "id": "Address/Properties[Address1]",
+              "name": "Address1",
+              "propertyType": { "__id": ":String?" },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Address/Properties[Address2]",
+              "name": "Address2",
+              "propertyType": { "__id": ":String?" },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Address/Properties[City]",
+              "name": "City",
+              "propertyType": { "__id": ":String?" },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Address/Properties[State]",
+              "name": "State",
+              "propertyType": { "__id": ":String?" },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Address/Properties[ZIP]",
+              "name": "ZIP",
+              "propertyType": { "__id": ":String?" },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Address/Properties[Contact]",
+              "name": "Contact",
+              "association": { "__id": "Address_Contact" },
+              "elementType": { "__id": "Contact" },
+              "fromEnd": { "__id": "Address_Contact/Ends[Address]" },
+              "propertyType": { "__id": "Contact" },
+              "toEnd": { "__id": "Address_Contact/Ends[Contact]" }
+            },
+            {
+              "id": "Address/Properties[CreatedBy]",
+              "name": "CreatedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Address/Properties[Created]",
+              "name": "Created",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Address/Properties[ModifiedBy]",
+              "name": "ModifiedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Address/Properties[Modified]",
+              "name": "Modified",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Address/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@UseForConcurrency": { },
+              ":@Hidden": { },
+              ":@NotSearchable": { }
+            }
+          ]
+        },
+        {
+          "id": "Address_Contact",
+          "name": "Address_Contact",
+          "ends":
+          [
+            {
+              "id": "Address_Contact/Ends[Address]",
+              "name": "Address",
+              "multiplicity": "Many",
+              "entityType": { "__id": "Address" }
+            },
+            {
+              "id": "Address_Contact/Ends[Contact]",
+              "name": "Contact",
+              "multiplicity": "One",
+              "entityType": { "__id": "Contact" },
+              ":@DeleteRule": { "action": "Cascade" }
             }
           ]
         },
@@ -2543,7 +3428,27 @@
                                 {
                                   "member": { "__id": "Contact/Properties[FirstName]" }
                                 }
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
                               },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          },
+                          {
+                            "displayName": "right",
+                            "name": "right",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
                               {
                                 "displayName": "Birth Date",
                                 "name": "BirthDate",
@@ -2563,7 +3468,404 @@
                                 {
                                   "member": { "__id": "Contact/Properties[Gender]" }
                                 }
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
                               },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "displayName": "Email Addresses",
+                    "name": "EmailAddresses",
+                    "kind": "Tab",
+                    "view": { "__id": ":RowsLayout" },
+                    "childContentItems":
+                    [
+                      {
+                        "displayName": "Email Addresses",
+                        "name": "EmailAddresses1",
+                        "kind": "Collection",
+                        "view": { "__id": ":List" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "AddEditContact/Properties[EmailAddresses]" }
+                        },
+                        "childContentItems":
+                        [
+                          {
+                            "displayName": "Email Address",
+                            "name": "RowTemplate",
+                            "kind": "Details",
+                            "view": { "__id": ":Summary" },
+                            "dataSource":
+                            {
+                              "links":
+                              [
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "commandItems":
+                    [
+                      {
+                        "displayName": "Add Email Address",
+                        "name": "AddEmailAddress",
+                        "kind": "Command",
+                        "view": { "__id": ":CommandBarButton" },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[Tap]" },
+                            "source":
+                            {
+                              "target": { "__id": "!module/Methods[showAddEditEmailAddress]" },
+                              ":@AssociatedCollection": { "collection": { "__id": "AddEditContact/Properties[EmailAddresses]" } },
+                              ":@CreateNewEntity":
+                              {
+                                "targetParameter": { "__id": "!module/Methods[showAddEditEmailAddress]/Parameters[EmailAddress]" }
+                              }
+                            }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "displayName": "Phone Numbers",
+                    "name": "PhoneNumbers",
+                    "kind": "Tab",
+                    "view": { "__id": ":RowsLayout" },
+                    "childContentItems":
+                    [
+                      {
+                        "displayName": "Phone Numbers",
+                        "name": "PhoneNumbers1",
+                        "kind": "Collection",
+                        "view": { "__id": ":List" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "AddEditContact/Properties[PhoneNumbers]" }
+                        },
+                        "childContentItems":
+                        [
+                          {
+                            "displayName": "Phone Number",
+                            "name": "RowTemplate1",
+                            "kind": "Details",
+                            "view": { "__id": ":Summary" },
+                            "dataSource":
+                            {
+                              "links":
+                              [
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "commandItems":
+                    [
+                      {
+                        "displayName": "Add Phone Number",
+                        "name": "AddPhoneNumber",
+                        "kind": "Command",
+                        "view": { "__id": ":CommandBarButton" },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[Tap]" },
+                            "source":
+                            {
+                              "target": { "__id": "!module/Methods[showAddEditPhoneNumber]" },
+                              ":@AssociatedCollection": { "collection": { "__id": "AddEditContact/Properties[PhoneNumbers]" } },
+                              ":@CreateNewEntity":
+                              {
+                                "targetParameter": { "__id": "!module/Methods[showAddEditPhoneNumber]/Parameters[PhoneNumber]" }
+                              }
+                            }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "displayName": "Addresses",
+                    "name": "Addresses",
+                    "kind": "Tab",
+                    "view": { "__id": ":RowsLayout" },
+                    "childContentItems":
+                    [
+                      {
+                        "displayName": "Addresses",
+                        "name": "Addresses1",
+                        "kind": "Collection",
+                        "view": { "__id": ":List" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "AddEditContact/Properties[Addresses]" }
+                        },
+                        "childContentItems":
+                        [
+                          {
+                            "displayName": "Address",
+                            "name": "RowTemplate2",
+                            "kind": "Details",
+                            "view": { "__id": ":Summary" },
+                            "dataSource":
+                            {
+                              "links":
+                              [
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "commandItems":
+                    [
+                      {
+                        "displayName": "Add Address",
+                        "name": "AddAddress",
+                        "kind": "Command",
+                        "view": { "__id": ":CommandBarButton" },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[Tap]" },
+                            "source":
+                            {
+                              "target": { "__id": "!module/Methods[showAddEditAddress]" },
+                              ":@AssociatedCollection": { "collection": { "__id": "AddEditContact/Properties[Addresses]" } },
+                              ":@CreateNewEntity":
+                              {
+                                "targetParameter": { "__id": "!module/Methods[showAddEditAddress]/Parameters[Address]" }
+                              }
+                            }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-add"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "displayName": "Popups",
+                "name": "Popups",
+                "kind": "Group",
+                "view": { "__id": ":DialogPages" }
+              }
+            ],
+            "propertySources":
+            [
+              {
+                "property": { "__id": ":Screen/Properties[ScreenType]" },
+                "value": "Edit"
+              }
+            ]
+          },
+          "methods":
+          [
+            {
+              "id": "AddEditContact/Methods[showTab]",
+              "name": "showTab",
+              "parameters":
+              [
+                {
+                  "id": "AddEditContact/Methods[showTab]/Parameters[tabName]",
+                  "name": "tabName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            },
+            {
+              "id": "AddEditContact/Methods[showDialog]",
+              "name": "showDialog",
+              "parameters":
+              [
+                {
+                  "id": "AddEditContact/Methods[showDialog]/Parameters[dialogName]",
+                  "name": "dialogName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "AddEditContact/Properties[Contact]",
+              "name": "Contact",
+              "elementType": { "__id": "Contact" },
+              "propertyType": { "__id": "Contact" },
+              ":@IsParameter": { }
+            },
+            {
+              "id": "AddEditContact/Properties[EmailAddresses]",
+              "name": "EmailAddresses",
+              "pageSize": 15,
+              "elementType": { "__id": "EmailAddress" },
+              "propertyType": { "__id": "CollectionView$EmailAddress" },
+              "query":
+              {
+                "id": "AddEditContact/Properties[EmailAddresses]/Query",
+                "name": "EmailAddressesQuery",
+                "elementType": { "__id": "EmailAddress" },
+                "returnType": { "__id": "EmailAddress*" },
+                "source":
+                {
+                  "links":
+                  [
+                    {
+                      "member": { "__id": "AddEditContact/Properties[Contact]" }
+                    },
+                    {
+                      "member": { "__id": "Contact/Properties[EmailAddresses]" }
+                    }
+                  ]
+                }
+              },
+              "source":
+              {
+                "target": { "__id": "AddEditContact/Properties[EmailAddresses]/Query" }
+              }
+            },
+            {
+              "id": "AddEditContact/Properties[PhoneNumbers]",
+              "name": "PhoneNumbers",
+              "pageSize": 15,
+              "elementType": { "__id": "PhoneNumber" },
+              "propertyType": { "__id": "CollectionView$PhoneNumber" },
+              "query":
+              {
+                "id": "AddEditContact/Properties[PhoneNumbers]/Query",
+                "name": "PhoneNumbersQuery",
+                "elementType": { "__id": "PhoneNumber" },
+                "returnType": { "__id": "PhoneNumber*" },
+                "source":
+                {
+                  "links":
+                  [
+                    {
+                      "member": { "__id": "AddEditContact/Properties[Contact]" }
+                    },
+                    {
+                      "member": { "__id": "Contact/Properties[PhoneNumbers]" }
+                    }
+                  ]
+                }
+              },
+              "source":
+              {
+                "target": { "__id": "AddEditContact/Properties[PhoneNumbers]/Query" }
+              }
+            },
+            {
+              "id": "AddEditContact/Properties[Addresses]",
+              "name": "Addresses",
+              "pageSize": 15,
+              "elementType": { "__id": "Address" },
+              "propertyType": { "__id": "CollectionView$Address" },
+              "query":
+              {
+                "id": "AddEditContact/Properties[Addresses]/Query",
+                "name": "AddressesQuery",
+                "elementType": { "__id": "Address" },
+                "returnType": { "__id": "Address*" },
+                "source":
+                {
+                  "links":
+                  [
+                    {
+                      "member": { "__id": "AddEditContact/Properties[Contact]" }
+                    },
+                    {
+                      "member": { "__id": "Contact/Properties[Addresses]" }
+                    }
+                  ]
+                }
+              },
+              "source":
+              {
+                "target": { "__id": "AddEditContact/Properties[Addresses]/Query" }
+              }
+            }
+          ]
+        },
+        {
+          "displayName": "Add Edit Phone Number",
+          "id": "AddEditPhoneNumber",
+          "name": "AddEditPhoneNumber",
+          "launchMode": "Single",
+          ":@SaveChangesTo":
+          {
+            "property": { "__id": "DataWorkspace/Members[ApplicationData]" }
+          },
+          "rootContentItem":
+          {
+            "displayName": "Root Content Item",
+            "name": "RootContentItem",
+            "kind": "Screen",
+            "view": { "__id": ":Screen" },
+            "childContentItems":
+            [
+              {
+                "displayName": "Tabs",
+                "name": "Tabs",
+                "kind": "Group",
+                "view": { "__id": ":TabPages" },
+                "childContentItems":
+                [
+                  {
+                    "displayName": "Details",
+                    "name": "Details",
+                    "kind": "Tab",
+                    "view": { "__id": ":RowsLayout" },
+                    "childContentItems":
+                    [
+                      {
+                        "displayName": "columns",
+                        "name": "columns",
+                        "kind": "Details",
+                        "view": { "__id": ":ColumnsLayout" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "AddEditPhoneNumber/Properties[PhoneNumber]" }
+                        },
+                        "childContentItems":
+                        [
+                          {
+                            "displayName": "left",
+                            "name": "left",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
                               {
                                 "displayName": "Phone",
                                 "name": "Phone",
@@ -2571,17 +3873,17 @@
                                 "view": { "__id": ":PhoneNumberEditor" },
                                 "dataSource":
                                 {
-                                  "member": { "__id": "Contact/Properties[Phone]" }
+                                  "member": { "__id": "PhoneNumber/Properties[Phone]" }
                                 }
                               },
                               {
-                                "displayName": "Email",
-                                "name": "Email",
+                                "displayName": "Phone Type",
+                                "name": "PhoneType",
                                 "kind": "Value",
-                                "view": { "__id": ":EmailAddressEditor" },
+                                "view": { "__id": ":ValueDropdown" },
                                 "dataSource":
                                 {
-                                  "member": { "__id": "Contact/Properties[Email]" }
+                                  "member": { "__id": "PhoneNumber/Properties[PhoneType]" }
                                 }
                               }
                             ],
@@ -2605,54 +3907,29 @@
                             "childContentItems":
                             [
                               {
-                                "displayName": "Address1",
-                                "name": "Address1",
-                                "kind": "Value",
-                                "view": { "__id": ":TextBox" },
+                                "displayName": "Contact",
+                                "name": "Contact",
+                                "kind": "Details",
+                                "view": { "__id": ":DetailsModalPicker" },
                                 "dataSource":
                                 {
-                                  "member": { "__id": "Contact/Properties[Address1]" }
-                                }
-                              },
-                              {
-                                "displayName": "Address2",
-                                "name": "Address2",
-                                "kind": "Value",
-                                "view": { "__id": ":TextBox" },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "Contact/Properties[Address2]" }
-                                }
-                              },
-                              {
-                                "displayName": "City",
-                                "name": "City",
-                                "kind": "Value",
-                                "view": { "__id": ":TextBox" },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "Contact/Properties[City]" }
-                                }
-                              },
-                              {
-                                "displayName": "State",
-                                "name": "State",
-                                "kind": "Value",
-                                "view": { "__id": ":TextBox" },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "Contact/Properties[State]" }
-                                }
-                              },
-                              {
-                                "displayName": "ZIP",
-                                "name": "ZIP",
-                                "kind": "Value",
-                                "view": { "__id": ":TextBox" },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "Contact/Properties[ZIP]" }
-                                }
+                                  "member": { "__id": "PhoneNumber/Properties[Contact]" }
+                                },
+                                "childContentItems":
+                                [
+                                  {
+                                    "displayName": "Contact",
+                                    "name": "RowTemplate",
+                                    "kind": "Details",
+                                    "view": { "__id": ":Summary" },
+                                    "dataSource":
+                                    {
+                                      "links":
+                                      [
+                                      ]
+                                    }
+                                  }
+                                ]
                               }
                             ],
                             "propertySources":
@@ -2695,24 +3972,24 @@
           "methods":
           [
             {
-              "id": "AddEditContact/Methods[showTab]",
+              "id": "AddEditPhoneNumber/Methods[showTab]",
               "name": "showTab",
               "parameters":
               [
                 {
-                  "id": "AddEditContact/Methods[showTab]/Parameters[tabName]",
+                  "id": "AddEditPhoneNumber/Methods[showTab]/Parameters[tabName]",
                   "name": "tabName",
                   "parameterType": { "__id": ":String" }
                 }
               ]
             },
             {
-              "id": "AddEditContact/Methods[showDialog]",
+              "id": "AddEditPhoneNumber/Methods[showDialog]",
               "name": "showDialog",
               "parameters":
               [
                 {
-                  "id": "AddEditContact/Methods[showDialog]/Parameters[dialogName]",
+                  "id": "AddEditPhoneNumber/Methods[showDialog]/Parameters[dialogName]",
                   "name": "dialogName",
                   "parameterType": { "__id": ":String" }
                 }
@@ -2722,10 +3999,430 @@
           "properties":
           [
             {
-              "id": "AddEditContact/Properties[Contact]",
-              "name": "Contact",
-              "elementType": { "__id": "Contact" },
-              "propertyType": { "__id": "Contact" },
+              "id": "AddEditPhoneNumber/Properties[PhoneNumber]",
+              "name": "PhoneNumber",
+              "elementType": { "__id": "PhoneNumber" },
+              "propertyType": { "__id": "PhoneNumber" },
+              ":@IsParameter": { }
+            }
+          ]
+        },
+        {
+          "displayName": "Add Edit Address",
+          "id": "AddEditAddress",
+          "name": "AddEditAddress",
+          "launchMode": "Single",
+          ":@SaveChangesTo":
+          {
+            "property": { "__id": "DataWorkspace/Members[ApplicationData]" }
+          },
+          "rootContentItem":
+          {
+            "displayName": "Root Content Item",
+            "name": "RootContentItem",
+            "kind": "Screen",
+            "view": { "__id": ":Screen" },
+            "childContentItems":
+            [
+              {
+                "displayName": "Tabs",
+                "name": "Tabs",
+                "kind": "Group",
+                "view": { "__id": ":TabPages" },
+                "childContentItems":
+                [
+                  {
+                    "displayName": "Details",
+                    "name": "Details",
+                    "kind": "Tab",
+                    "view": { "__id": ":RowsLayout" },
+                    "childContentItems":
+                    [
+                      {
+                        "displayName": "columns",
+                        "name": "columns",
+                        "kind": "Details",
+                        "view": { "__id": ":ColumnsLayout" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "AddEditAddress/Properties[Address]" }
+                        },
+                        "childContentItems":
+                        [
+                          {
+                            "displayName": "left",
+                            "name": "left",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "Address Type",
+                                "name": "AddressType",
+                                "kind": "Value",
+                                "view": { "__id": ":ValueDropdown" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Address/Properties[AddressType]" }
+                                }
+                              },
+                              {
+                                "displayName": "Address1",
+                                "name": "Address1",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Address/Properties[Address1]" }
+                                }
+                              },
+                              {
+                                "displayName": "Address2",
+                                "name": "Address2",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Address/Properties[Address2]" }
+                                }
+                              },
+                              {
+                                "displayName": "City",
+                                "name": "City",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Address/Properties[City]" }
+                                }
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
+                              },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          },
+                          {
+                            "displayName": "right",
+                            "name": "right",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "State",
+                                "name": "State",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Address/Properties[State]" }
+                                }
+                              },
+                              {
+                                "displayName": "ZIP",
+                                "name": "ZIP",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Address/Properties[ZIP]" }
+                                }
+                              },
+                              {
+                                "displayName": "Contact",
+                                "name": "Contact",
+                                "kind": "Details",
+                                "view": { "__id": ":DetailsModalPicker" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Address/Properties[Contact]" }
+                                },
+                                "childContentItems":
+                                [
+                                  {
+                                    "displayName": "Contact",
+                                    "name": "RowTemplate",
+                                    "kind": "Details",
+                                    "view": { "__id": ":Summary" },
+                                    "dataSource":
+                                    {
+                                      "links":
+                                      [
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
+                              },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "displayName": "Popups",
+                "name": "Popups",
+                "kind": "Group",
+                "view": { "__id": ":DialogPages" }
+              }
+            ],
+            "propertySources":
+            [
+              {
+                "property": { "__id": ":Screen/Properties[ScreenType]" },
+                "value": "Edit"
+              },
+              {
+                "property": { "__id": ":Screen/Properties[ShowAsDialog]" },
+                "value": true
+              }
+            ]
+          },
+          "methods":
+          [
+            {
+              "id": "AddEditAddress/Methods[showTab]",
+              "name": "showTab",
+              "parameters":
+              [
+                {
+                  "id": "AddEditAddress/Methods[showTab]/Parameters[tabName]",
+                  "name": "tabName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            },
+            {
+              "id": "AddEditAddress/Methods[showDialog]",
+              "name": "showDialog",
+              "parameters":
+              [
+                {
+                  "id": "AddEditAddress/Methods[showDialog]/Parameters[dialogName]",
+                  "name": "dialogName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "AddEditAddress/Properties[Address]",
+              "name": "Address",
+              "elementType": { "__id": "Address" },
+              "propertyType": { "__id": "Address" },
+              ":@IsParameter": { }
+            }
+          ]
+        },
+        {
+          "displayName": "Add Edit Email Address",
+          "id": "AddEditEmailAddress",
+          "name": "AddEditEmailAddress",
+          "launchMode": "Single",
+          ":@SaveChangesTo":
+          {
+            "property": { "__id": "DataWorkspace/Members[ApplicationData]" }
+          },
+          "rootContentItem":
+          {
+            "displayName": "Root Content Item",
+            "name": "RootContentItem",
+            "kind": "Screen",
+            "view": { "__id": ":Screen" },
+            "childContentItems":
+            [
+              {
+                "displayName": "Tabs",
+                "name": "Tabs",
+                "kind": "Group",
+                "view": { "__id": ":TabPages" },
+                "childContentItems":
+                [
+                  {
+                    "displayName": "Details",
+                    "name": "Details",
+                    "kind": "Tab",
+                    "view": { "__id": ":RowsLayout" },
+                    "childContentItems":
+                    [
+                      {
+                        "displayName": "columns",
+                        "name": "columns",
+                        "kind": "Details",
+                        "view": { "__id": ":ColumnsLayout" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "AddEditEmailAddress/Properties[EmailAddress]" }
+                        },
+                        "childContentItems":
+                        [
+                          {
+                            "displayName": "left",
+                            "name": "left",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "Email",
+                                "name": "Email",
+                                "kind": "Value",
+                                "view": { "__id": ":EmailAddressEditor" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "EmailAddress/Properties[Email]" }
+                                }
+                              },
+                              {
+                                "displayName": "Email Type",
+                                "name": "EmailType",
+                                "kind": "Value",
+                                "view": { "__id": ":ValueDropdown" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "EmailAddress/Properties[EmailType]" }
+                                }
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
+                              },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          },
+                          {
+                            "displayName": "right",
+                            "name": "right",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "Contact",
+                                "name": "Contact",
+                                "kind": "Details",
+                                "view": { "__id": ":DetailsModalPicker" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "EmailAddress/Properties[Contact]" }
+                                },
+                                "childContentItems":
+                                [
+                                  {
+                                    "displayName": "Contact",
+                                    "name": "RowTemplate",
+                                    "kind": "Details",
+                                    "view": { "__id": ":Summary" },
+                                    "dataSource":
+                                    {
+                                      "links":
+                                      [
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
+                              },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "displayName": "Popups",
+                "name": "Popups",
+                "kind": "Group",
+                "view": { "__id": ":DialogPages" }
+              }
+            ],
+            "propertySources":
+            [
+              {
+                "property": { "__id": ":Screen/Properties[ScreenType]" },
+                "value": "Edit"
+              },
+              {
+                "property": { "__id": ":Screen/Properties[ShowAsDialog]" },
+                "value": true
+              }
+            ]
+          },
+          "methods":
+          [
+            {
+              "id": "AddEditEmailAddress/Methods[showTab]",
+              "name": "showTab",
+              "parameters":
+              [
+                {
+                  "id": "AddEditEmailAddress/Methods[showTab]/Parameters[tabName]",
+                  "name": "tabName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            },
+            {
+              "id": "AddEditEmailAddress/Methods[showDialog]",
+              "name": "showDialog",
+              "parameters":
+              [
+                {
+                  "id": "AddEditEmailAddress/Methods[showDialog]/Parameters[dialogName]",
+                  "name": "dialogName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "AddEditEmailAddress/Properties[EmailAddress]",
+              "name": "EmailAddress",
+              "elementType": { "__id": "EmailAddress" },
+              "propertyType": { "__id": "EmailAddress" },
               ":@IsParameter": { }
             }
           ]
@@ -2748,6 +4445,45 @@
               "id": "!module/Methods[showAddEditContact]/Parameters[Contact]",
               "name": "Contact",
               "parameterType": { "__id": "Contact" }
+            }
+          ]
+        },
+        {
+          "id": "!module/Methods[showAddEditPhoneNumber]",
+          "name": "showAddEditPhoneNumber",
+          ":@ShowScreenMethod": { "targetScreen": { "__id": "AddEditPhoneNumber" } },
+          "parameters":
+          [
+            {
+              "id": "!module/Methods[showAddEditPhoneNumber]/Parameters[PhoneNumber]",
+              "name": "PhoneNumber",
+              "parameterType": { "__id": "PhoneNumber" }
+            }
+          ]
+        },
+        {
+          "id": "!module/Methods[showAddEditAddress]",
+          "name": "showAddEditAddress",
+          ":@ShowScreenMethod": { "targetScreen": { "__id": "AddEditAddress" } },
+          "parameters":
+          [
+            {
+              "id": "!module/Methods[showAddEditAddress]/Parameters[Address]",
+              "name": "Address",
+              "parameterType": { "__id": "Address" }
+            }
+          ]
+        },
+        {
+          "id": "!module/Methods[showAddEditEmailAddress]",
+          "name": "showAddEditEmailAddress",
+          ":@ShowScreenMethod": { "targetScreen": { "__id": "AddEditEmailAddress" } },
+          "parameters":
+          [
+            {
+              "id": "!module/Methods[showAddEditEmailAddress]/Parameters[EmailAddress]",
+              "name": "EmailAddress",
+              "parameterType": { "__id": "EmailAddress" }
             }
           ]
         }

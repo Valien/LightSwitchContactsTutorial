@@ -2,8 +2,11 @@
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
     <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Properties\Client.lsml" Checksum="730BF568644BD9D04BB3C071231F479970F3869BD2EC2DCD22E4BBD69ADCC928" />
-    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Properties\Proxies.lsml" Checksum="0763CF02BFFEBFCB747AD978BD20AA0A716F911405A7E65E3F173990C42125BF" />
-    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\BrowseContacts.lsml" Checksum="5B87ED9A66D9101661E71803A0FEC5120485C592626741F94242604F30C6F8B0" />
-    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\AddEditContact.lsml" Checksum="0509A8CA22C3214A9BA53D50E51409AC21E17DB960103D72212F003C636961F0" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Properties\Proxies.lsml" Checksum="B5A28290C229B9B5AEB5DCE9094A5F33E8770A3A4E613900D8AF2CA7B3F8692E" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\BrowseContacts.lsml" Checksum="9FD327CB3F562922776D8352758D8E3CE75FCBA1A7CDC51F41E644C22C4D7C16" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\AddEditContact.lsml" Checksum="26447389E87A22A3237D485BBF12A56070A1FFD66B727A970EE13C2387FD5CC0" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\AddEditPhoneNumber.lsml" Checksum="D6057CEDABB9B2665B961028D880F363B5E6ED8F2366453AE69504D602B7F76F" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\AddEditAddress.lsml" Checksum="1DA9C0DBFBD889624961E01EAF65373B77DC5C9C0C169E66582E4B25A0E8E1FC" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.HTMLClient\Screens\AddEditEmailAddress.lsml" Checksum="C60087F371A04999F6A14342F9795B392DE1D0C1B1CC26250123284E23DA2A87" />
   </Documents>
 </ModelDocumentManifest>

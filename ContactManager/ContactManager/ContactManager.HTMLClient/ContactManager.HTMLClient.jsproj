@@ -89,7 +89,10 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\AddEditAddress.lsml" />
     <LightSwitchModel Include="Screens\AddEditContact.lsml" />
+    <LightSwitchModel Include="Screens\AddEditEmailAddress.lsml" />
+    <LightSwitchModel Include="Screens\AddEditPhoneNumber.lsml" />
     <LightSwitchModel Include="Screens\BrowseContacts.lsml" />
   </ItemGroup>
   <ItemGroup>

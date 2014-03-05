@@ -9,20 +9,122 @@
     <Property Name="FirstName" Type="Edm.String" MaxLength="255" />
     <Property Name="BirthDate" Type="Edm.DateTime" />
     <Property Name="Gender" Type="Edm.String" MaxLength="1" />
-    <Property Name="Phone" Type="Edm.String" MaxLength="255" />
-    <Property Name="Email" Type="Edm.String" MaxLength="255" />
-    <Property Name="Address1" Type="Edm.String" MaxLength="255" />
-    <Property Name="Address2" Type="Edm.String" MaxLength="255" />
-    <Property Name="City" Type="Edm.String" MaxLength="255" />
-    <Property Name="State" Type="Edm.String" MaxLength="255" />
-    <Property Name="ZIP" Type="Edm.String" MaxLength="255" />
     <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
     <Property Name="Created" Type="Edm.DateTimeOffset" />
     <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
     <Property Name="Modified" Type="Edm.DateTimeOffset" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="EmailAddresses" Relationship="LightSwitchApplication.EmailAddress_Contact" ToRole="EmailAddress" FromRole="Contact" />
+    <NavigationProperty Name="PhoneNumbers" Relationship="LightSwitchApplication.PhoneNumber_Contact" ToRole="PhoneNumber" FromRole="Contact" />
+    <NavigationProperty Name="Addresses" Relationship="LightSwitchApplication.Address_Contact" ToRole="Address" FromRole="Contact" />
   </EntityType>
+  <EntityType Name="EmailAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="EmailType" Type="Edm.String" Nullable="false" MaxLength="25" />
+    <Property Name="EmailAddress_Contact" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Contact" Relationship="LightSwitchApplication.EmailAddress_Contact" ToRole="Contact" FromRole="EmailAddress" />
+  </EntityType>
+  <EntityType Name="PhoneNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Phone" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="PhoneType" Type="Edm.String" Nullable="false" MaxLength="25" />
+    <Property Name="PhoneNumber_Contact" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Contact" Relationship="LightSwitchApplication.PhoneNumber_Contact" ToRole="Contact" FromRole="PhoneNumber" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddressType" Type="Edm.String" Nullable="false" MaxLength="25" />
+    <Property Name="Address1" Type="Edm.String" MaxLength="255" />
+    <Property Name="Address2" Type="Edm.String" MaxLength="255" />
+    <Property Name="City" Type="Edm.String" MaxLength="255" />
+    <Property Name="State" Type="Edm.String" MaxLength="255" />
+    <Property Name="ZIP" Type="Edm.String" MaxLength="255" />
+    <Property Name="Address_Contact" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Contact" Relationship="LightSwitchApplication.Address_Contact" ToRole="Contact" FromRole="Address" />
+  </EntityType>
+  <Association Name="EmailAddress_Contact">
+    <End Role="Contact" Type="LightSwitchApplication.Contact" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EmailAddress" Type="LightSwitchApplication.EmailAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailAddress">
+        <PropertyRef Name="EmailAddress_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhoneNumber_Contact">
+    <End Role="Contact" Type="LightSwitchApplication.Contact" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhoneNumber" Type="LightSwitchApplication.PhoneNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumber">
+        <PropertyRef Name="PhoneNumber_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Address_Contact">
+    <End Role="Contact" Type="LightSwitchApplication.Contact" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Address" Type="LightSwitchApplication.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Address_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Contacts" EntityType="LightSwitchApplication.Contact" />
+    <EntitySet Name="EmailAddresses" EntityType="LightSwitchApplication.EmailAddress" />
+    <EntitySet Name="PhoneNumbers" EntityType="LightSwitchApplication.PhoneNumber" />
+    <EntitySet Name="Addresses" EntityType="LightSwitchApplication.Address" />
+    <AssociationSet Name="EmailAddress_Contact" Association="LightSwitchApplication.EmailAddress_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="EmailAddress" EntitySet="EmailAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="PhoneNumber_Contact" Association="LightSwitchApplication.PhoneNumber_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+    </AssociationSet>
+    <AssociationSet Name="Address_Contact" Association="LightSwitchApplication.Address_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

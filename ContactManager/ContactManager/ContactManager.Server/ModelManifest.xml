@@ -2,7 +2,10 @@
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
     <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\Properties\Service.lsml" Checksum="679C78F29C5AF23E9956A773B0E46DF90F7B86CADA0B79571E5896A1C79F5B70" />
-    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\Properties\DataSources\ApplicationData.lsml" Checksum="C9007E90610BDB16B02BFA701E17F70EAA51ACD70D7BB658DBA4901EFBFA0129" />
-    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\DataSources\ApplicationData\Contacts.lsml" Checksum="CE12F90F6B27950F8CEB90833C2FCFF1C5F09C3F0AD69CA6E5FF3F2E5A9ECC10" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\Properties\DataSources\ApplicationData.lsml" Checksum="4269B7A1C607D3AEA1D34BA816EE24BE223A014F83A97F863157835AA09C6154" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\DataSources\ApplicationData\Contacts.lsml" Checksum="2BE420652FC4DFCD4A44AD5AD720647A4A231C48F7285B81C31A4D07E1C433E2" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\DataSources\ApplicationData\EmailAddresses.lsml" Checksum="72E1E84F5F1502E413C87BA66F574B252584B7AF8CEE6FB9CFF0919E5E95BC8C" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\DataSources\ApplicationData\PhoneNumbers.lsml" Checksum="949E06937FDBCFC1837B70A5B3199DA8A21B639D962FCB915F9C59F6DF3F9AB7" />
+    <Document FullPath="C:\Users\Allen Vailliencourt\Documents\GitHub\LightSwitchContactsTutorial\ContactManager\ContactManager\ContactManager.Server\DataSources\ApplicationData\Addresses.lsml" Checksum="8FB367E32243D4118D8C9DE8CE2CDEBD88D073A2AA7A8384D6E11EB9CA936EA3" />
   </Documents>
 </ModelDocumentManifest>

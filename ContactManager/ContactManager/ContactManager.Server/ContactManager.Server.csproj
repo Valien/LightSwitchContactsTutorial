@@ -205,6 +205,9 @@
     <Content Include="Web.config" />
     <LightSwitchModel Include="Properties\DataSources\ApplicationData.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\Contacts.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\EmailAddresses.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\PhoneNumbers.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Addresses.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

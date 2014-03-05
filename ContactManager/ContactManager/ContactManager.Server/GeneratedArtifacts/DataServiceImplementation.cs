@@ -46,6 +46,18 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::LightSwitchApplication.Implementation.Contact();
             }
+            if (type == typeof(global::LightSwitchApplication.Implementation.EmailAddress))
+            {
+                return new global::LightSwitchApplication.Implementation.EmailAddress();
+            }
+            if (type == typeof(global::LightSwitchApplication.Implementation.PhoneNumber))
+            {
+                return new global::LightSwitchApplication.Implementation.PhoneNumber();
+            }
+            if (type == typeof(global::LightSwitchApplication.Implementation.Address))
+            {
+                return new global::LightSwitchApplication.Implementation.Address();
+            }
     
             return base.CreateObject(type);
         }
@@ -65,6 +77,18 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.Contact))
             {
                 return new global::LightSwitchApplication.Implementation.Contact();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.EmailAddress))
+            {
+                return new global::LightSwitchApplication.Implementation.EmailAddress();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.PhoneNumber))
+            {
+                return new global::LightSwitchApplication.Implementation.PhoneNumber();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.Address))
+            {
+                return new global::LightSwitchApplication.Implementation.Address();
             }
             return null;
         }
@@ -115,6 +139,18 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::LightSwitchApplication.Implementation.Contact);
             }
+            if (typeof(global::LightSwitchApplication.EmailAddress) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.EmailAddress);
+            }
+            if (typeof(global::LightSwitchApplication.PhoneNumber) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.PhoneNumber);
+            }
+            if (typeof(global::LightSwitchApplication.Address) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.Address);
+            }
             return null;
         }
     }
@@ -126,6 +162,207 @@ namespace LightSwitchApplication.Implementation
     
     {
     
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Contact.DetailsClass.IImplementation.EmailAddresses
+        {
+            get
+            {
+                return this.EmailAddresses;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Contact.DetailsClass.IImplementation.PhoneNumbers
+        {
+            get
+            {
+                return this.PhoneNumbers;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Contact.DetailsClass.IImplementation.Addresses
+        {
+            get
+            {
+                return this.Addresses;
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class EmailAddress :
+        global::LightSwitchApplication.EmailAddress.DetailsClass.IImplementation,
+        global::Microsoft.LightSwitch.Internal.ICreatedModifiedPropertiesImplementation
+    
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.EmailAddress.DetailsClass.IImplementation.Contact
+        {
+            get
+            {
+                return this.Contact;
+            }
+            set
+            {
+                this.Contact = (global::LightSwitchApplication.Implementation.Contact)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Contact");
+                }
+            }
+        }
+        
+        partial void OnEmailAddress_ContactChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Contact");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class PhoneNumber :
+        global::LightSwitchApplication.PhoneNumber.DetailsClass.IImplementation,
+        global::Microsoft.LightSwitch.Internal.ICreatedModifiedPropertiesImplementation
+    
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.PhoneNumber.DetailsClass.IImplementation.Contact
+        {
+            get
+            {
+                return this.Contact;
+            }
+            set
+            {
+                this.Contact = (global::LightSwitchApplication.Implementation.Contact)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Contact");
+                }
+            }
+        }
+        
+        partial void OnPhoneNumber_ContactChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Contact");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Address :
+        global::LightSwitchApplication.Address.DetailsClass.IImplementation,
+        global::Microsoft.LightSwitch.Internal.ICreatedModifiedPropertiesImplementation
+    
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Address.DetailsClass.IImplementation.Contact
+        {
+            get
+            {
+                return this.Contact;
+            }
+            set
+            {
+                this.Contact = (global::LightSwitchApplication.Implementation.Contact)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Contact");
+                }
+            }
+        }
+        
+        partial void OnAddress_ContactChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Contact");
+            }
+        }
+        
         #region IEntityImplementation Members
         private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
         

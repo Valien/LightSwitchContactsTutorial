@@ -2,6 +2,21 @@
 <Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ApplicationDataStore">
     <EntitySet Name="Contacts" EntityType="ApplicationDataStore.Contact" store:Type="Tables" Schema="dbo" Table="Contacts" />
+    <EntitySet Name="EmailAddresses" EntityType="ApplicationDataStore.EmailAddress" store:Type="Tables" Schema="dbo" Table="EmailAddresses" />
+    <EntitySet Name="PhoneNumbers" EntityType="ApplicationDataStore.PhoneNumber" store:Type="Tables" Schema="dbo" Table="PhoneNumbers" />
+    <EntitySet Name="Addresses" EntityType="ApplicationDataStore.Address" store:Type="Tables" Schema="dbo" Table="Addresses" />
+    <AssociationSet Name="EmailAddress_Contact" Association="ApplicationDataStore.EmailAddress_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="EmailAddress" EntitySet="EmailAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="PhoneNumber_Contact" Association="ApplicationDataStore.PhoneNumber_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+    </AssociationSet>
+    <AssociationSet Name="Address_Contact" Association="ApplicationDataStore.Address_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Contact">
     <Key>
@@ -12,8 +27,46 @@
     <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
     <Property Name="BirthDate" Type="datetime" />
     <Property Name="Gender" Type="nvarchar" MaxLength="1" />
-    <Property Name="Phone" Type="nvarchar" MaxLength="255" />
-    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="EmailAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="EmailType" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="EmailAddress_Contact" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhoneNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PhoneType" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="PhoneNumber_Contact" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="25" />
     <Property Name="Address1" Type="nvarchar" MaxLength="255" />
     <Property Name="Address2" Type="nvarchar" MaxLength="255" />
     <Property Name="City" Type="nvarchar" MaxLength="255" />
@@ -24,5 +77,48 @@
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Address_Contact" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="EmailAddress_Contact">
+    <End Role="Contact" Type="ApplicationDataStore.Contact" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EmailAddress" Type="ApplicationDataStore.EmailAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmailAddress">
+        <PropertyRef Name="EmailAddress_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhoneNumber_Contact">
+    <End Role="Contact" Type="ApplicationDataStore.Contact" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhoneNumber" Type="ApplicationDataStore.PhoneNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumber">
+        <PropertyRef Name="PhoneNumber_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Address_Contact">
+    <End Role="Contact" Type="ApplicationDataStore.Contact" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Address" Type="ApplicationDataStore.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Address_Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

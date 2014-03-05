@@ -17,6 +17,14 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+#region EDM Relationship Metadata
+
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "EmailAddress_Contact", "Contact", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Contact), "EmailAddress", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.EmailAddress), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "PhoneNumber_Contact", "Contact", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Contact), "PhoneNumber", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.PhoneNumber), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Address_Contact", "Contact", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Contact), "Address", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Address), true)]
+
+#endregion
+
 namespace LightSwitchApplication.Implementation
 {
     #region Contexts
@@ -77,6 +85,54 @@ namespace LightSwitchApplication.Implementation
             }
         }
         private ObjectSet<Contact> _Contacts;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<EmailAddress> EmailAddresses
+        {
+            get
+            {
+                if ((_EmailAddresses == null))
+                {
+                    _EmailAddresses = base.CreateObjectSet<EmailAddress>("EmailAddresses");
+                }
+                return _EmailAddresses;
+            }
+        }
+        private ObjectSet<EmailAddress> _EmailAddresses;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<PhoneNumber> PhoneNumbers
+        {
+            get
+            {
+                if ((_PhoneNumbers == null))
+                {
+                    _PhoneNumbers = base.CreateObjectSet<PhoneNumber>("PhoneNumbers");
+                }
+                return _PhoneNumbers;
+            }
+        }
+        private ObjectSet<PhoneNumber> _PhoneNumbers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Address> Addresses
+        {
+            get
+            {
+                if ((_Addresses == null))
+                {
+                    _Addresses = base.CreateObjectSet<Address>("Addresses");
+                }
+                return _Addresses;
+            }
+        }
+        private ObjectSet<Address> _Addresses;
 
         #endregion
 
@@ -89,6 +145,30 @@ namespace LightSwitchApplication.Implementation
         {
             base.AddObject("Contacts", contact);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the EmailAddresses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToEmailAddresses(EmailAddress emailAddress)
+        {
+            base.AddObject("EmailAddresses", emailAddress);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the PhoneNumbers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPhoneNumbers(PhoneNumber phoneNumber)
+        {
+            base.AddObject("PhoneNumbers", phoneNumber);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Addresses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAddresses(Address address)
+        {
+            base.AddObject("Addresses", address);
+        }
 
         #endregion
 
@@ -97,6 +177,399 @@ namespace LightSwitchApplication.Implementation
     #endregion
 
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="Address")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Address : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Address object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="addressType">Initial value of the AddressType property.</param>
+        /// <param name="address_Contact">Initial value of the Address_Contact property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        public static Address CreateAddress(global::System.Int32 id, global::System.String addressType, global::System.Int32 address_Contact, global::System.Byte[] rowVersion)
+        {
+            Address address = new Address();
+            address.Id = id;
+            address.AddressType = addressType;
+            address.Address_Contact = address_Contact;
+            address.RowVersion = rowVersion;
+            return address;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String AddressType
+        {
+            get
+            {
+                return _AddressType;
+            }
+            set
+            {
+                OnAddressTypeChanging(value);
+                ReportPropertyChanging("AddressType");
+                _AddressType = value;
+                ReportPropertyChanged("AddressType");
+                OnAddressTypeChanged();
+            }
+        }
+        private global::System.String _AddressType;
+        partial void OnAddressTypeChanging(global::System.String value);
+        partial void OnAddressTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Address1
+        {
+            get
+            {
+                return _Address1;
+            }
+            set
+            {
+                OnAddress1Changing(value);
+                ReportPropertyChanging("Address1");
+                _Address1 = value;
+                ReportPropertyChanged("Address1");
+                OnAddress1Changed();
+            }
+        }
+        private global::System.String _Address1;
+        partial void OnAddress1Changing(global::System.String value);
+        partial void OnAddress1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Address2
+        {
+            get
+            {
+                return _Address2;
+            }
+            set
+            {
+                OnAddress2Changing(value);
+                ReportPropertyChanging("Address2");
+                _Address2 = value;
+                ReportPropertyChanged("Address2");
+                OnAddress2Changed();
+            }
+        }
+        private global::System.String _Address2;
+        partial void OnAddress2Changing(global::System.String value);
+        partial void OnAddress2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String City
+        {
+            get
+            {
+                return _City;
+            }
+            set
+            {
+                OnCityChanging(value);
+                ReportPropertyChanging("City");
+                _City = value;
+                ReportPropertyChanged("City");
+                OnCityChanged();
+            }
+        }
+        private global::System.String _City;
+        partial void OnCityChanging(global::System.String value);
+        partial void OnCityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String State
+        {
+            get
+            {
+                return _State;
+            }
+            set
+            {
+                OnStateChanging(value);
+                ReportPropertyChanging("State");
+                _State = value;
+                ReportPropertyChanged("State");
+                OnStateChanged();
+            }
+        }
+        private global::System.String _State;
+        partial void OnStateChanging(global::System.String value);
+        partial void OnStateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ZIP
+        {
+            get
+            {
+                return _ZIP;
+            }
+            set
+            {
+                OnZIPChanging(value);
+                ReportPropertyChanging("ZIP");
+                _ZIP = value;
+                ReportPropertyChanged("ZIP");
+                OnZIPChanged();
+            }
+        }
+        private global::System.String _ZIP;
+        partial void OnZIPChanging(global::System.String value);
+        partial void OnZIPChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Address_Contact
+        {
+            get
+            {
+                return _Address_Contact;
+            }
+            set
+            {
+                OnAddress_ContactChanging(value);
+                ReportPropertyChanging("Address_Contact");
+                _Address_Contact = value;
+                ReportPropertyChanged("Address_Contact");
+                OnAddress_ContactChanged();
+            }
+        }
+        private global::System.Int32 _Address_Contact;
+        partial void OnAddress_ContactChanging(global::System.Int32 value);
+        partial void OnAddress_ContactChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CreatedBy
+        {
+            get
+            {
+                return _CreatedBy;
+            }
+            set
+            {
+                OnCreatedByChanging(value);
+                ReportPropertyChanging("CreatedBy");
+                _CreatedBy = value;
+                ReportPropertyChanged("CreatedBy");
+                OnCreatedByChanged();
+            }
+        }
+        private global::System.String _CreatedBy;
+        partial void OnCreatedByChanging(global::System.String value);
+        partial void OnCreatedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Created
+        {
+            get
+            {
+                return _Created;
+            }
+            set
+            {
+                OnCreatedChanging(value);
+                ReportPropertyChanging("Created");
+                _Created = value;
+                ReportPropertyChanged("Created");
+                OnCreatedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Created;
+        partial void OnCreatedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnCreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ModifiedBy
+        {
+            get
+            {
+                return _ModifiedBy;
+            }
+            set
+            {
+                OnModifiedByChanging(value);
+                ReportPropertyChanging("ModifiedBy");
+                _ModifiedBy = value;
+                ReportPropertyChanged("ModifiedBy");
+                OnModifiedByChanged();
+            }
+        }
+        private global::System.String _ModifiedBy;
+        partial void OnModifiedByChanging(global::System.String value);
+        partial void OnModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Modified
+        {
+            get
+            {
+                return _Modified;
+            }
+            set
+            {
+                OnModifiedChanging(value);
+                ReportPropertyChanging("Modified");
+                _Modified = value;
+                ReportPropertyChanged("Modified");
+                OnModifiedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Modified;
+        partial void OnModifiedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnModifiedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Address_Contact", "Contact")]
+        public Contact Contact
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.Address_Contact", "Contact").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.Address_Contact", "Contact").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Contact> ContactReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.Address_Contact", "Contact");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Contact>("LightSwitchApplication.Address_Contact", "Contact", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
     
     /// <summary>
     /// No Metadata Documentation available.
@@ -255,29 +728,260 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Phone
+        public global::System.String CreatedBy
         {
             get
             {
-                return _Phone;
+                return _CreatedBy;
             }
             set
             {
-                OnPhoneChanging(value);
-                ReportPropertyChanging("Phone");
-                _Phone = value;
-                ReportPropertyChanged("Phone");
-                OnPhoneChanged();
+                OnCreatedByChanging(value);
+                ReportPropertyChanging("CreatedBy");
+                _CreatedBy = value;
+                ReportPropertyChanged("CreatedBy");
+                OnCreatedByChanged();
             }
         }
-        private global::System.String _Phone;
-        partial void OnPhoneChanging(global::System.String value);
-        partial void OnPhoneChanged();
+        private global::System.String _CreatedBy;
+        partial void OnCreatedByChanging(global::System.String value);
+        partial void OnCreatedByChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Created
+        {
+            get
+            {
+                return _Created;
+            }
+            set
+            {
+                OnCreatedChanging(value);
+                ReportPropertyChanging("Created");
+                _Created = value;
+                ReportPropertyChanged("Created");
+                OnCreatedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Created;
+        partial void OnCreatedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnCreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ModifiedBy
+        {
+            get
+            {
+                return _ModifiedBy;
+            }
+            set
+            {
+                OnModifiedByChanging(value);
+                ReportPropertyChanging("ModifiedBy");
+                _ModifiedBy = value;
+                ReportPropertyChanged("ModifiedBy");
+                OnModifiedByChanged();
+            }
+        }
+        private global::System.String _ModifiedBy;
+        partial void OnModifiedByChanging(global::System.String value);
+        partial void OnModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Modified
+        {
+            get
+            {
+                return _Modified;
+            }
+            set
+            {
+                OnModifiedChanging(value);
+                ReportPropertyChanging("Modified");
+                _Modified = value;
+                ReportPropertyChanged("Modified");
+                OnModifiedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Modified;
+        partial void OnModifiedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnModifiedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "EmailAddress_Contact", "EmailAddress")]
+        public EntityCollection<EmailAddress> EmailAddresses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<EmailAddress>("LightSwitchApplication.EmailAddress_Contact", "EmailAddress");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<EmailAddress>("LightSwitchApplication.EmailAddress_Contact", "EmailAddress", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "PhoneNumber_Contact", "PhoneNumber")]
+        public EntityCollection<PhoneNumber> PhoneNumbers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PhoneNumber>("LightSwitchApplication.PhoneNumber_Contact", "PhoneNumber");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PhoneNumber>("LightSwitchApplication.PhoneNumber_Contact", "PhoneNumber", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "Address_Contact", "Address")]
+        public EntityCollection<Address> Addresses
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Address>("LightSwitchApplication.Address_Contact", "Address");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Address>("LightSwitchApplication.Address_Contact", "Address", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="EmailAddress")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class EmailAddress : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new EmailAddress object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="email">Initial value of the Email property.</param>
+        /// <param name="emailType">Initial value of the EmailType property.</param>
+        /// <param name="emailAddress_Contact">Initial value of the EmailAddress_Contact property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        public static EmailAddress CreateEmailAddress(global::System.Int32 id, global::System.String email, global::System.String emailType, global::System.Int32 emailAddress_Contact, global::System.Byte[] rowVersion)
+        {
+            EmailAddress emailAddress = new EmailAddress();
+            emailAddress.Id = id;
+            emailAddress.Email = email;
+            emailAddress.EmailType = emailType;
+            emailAddress.EmailAddress_Contact = emailAddress_Contact;
+            emailAddress.RowVersion = rowVersion;
+            return emailAddress;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Email
         {
@@ -301,122 +1005,50 @@ namespace LightSwitchApplication.Implementation
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Address1
+        public global::System.String EmailType
         {
             get
             {
-                return _Address1;
+                return _EmailType;
             }
             set
             {
-                OnAddress1Changing(value);
-                ReportPropertyChanging("Address1");
-                _Address1 = value;
-                ReportPropertyChanged("Address1");
-                OnAddress1Changed();
+                OnEmailTypeChanging(value);
+                ReportPropertyChanging("EmailType");
+                _EmailType = value;
+                ReportPropertyChanged("EmailType");
+                OnEmailTypeChanged();
             }
         }
-        private global::System.String _Address1;
-        partial void OnAddress1Changing(global::System.String value);
-        partial void OnAddress1Changed();
+        private global::System.String _EmailType;
+        partial void OnEmailTypeChanging(global::System.String value);
+        partial void OnEmailTypeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Address2
+        public global::System.Int32 EmailAddress_Contact
         {
             get
             {
-                return _Address2;
+                return _EmailAddress_Contact;
             }
             set
             {
-                OnAddress2Changing(value);
-                ReportPropertyChanging("Address2");
-                _Address2 = value;
-                ReportPropertyChanged("Address2");
-                OnAddress2Changed();
+                OnEmailAddress_ContactChanging(value);
+                ReportPropertyChanging("EmailAddress_Contact");
+                _EmailAddress_Contact = value;
+                ReportPropertyChanged("EmailAddress_Contact");
+                OnEmailAddress_ContactChanged();
             }
         }
-        private global::System.String _Address2;
-        partial void OnAddress2Changing(global::System.String value);
-        partial void OnAddress2Changed();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String City
-        {
-            get
-            {
-                return _City;
-            }
-            set
-            {
-                OnCityChanging(value);
-                ReportPropertyChanging("City");
-                _City = value;
-                ReportPropertyChanged("City");
-                OnCityChanged();
-            }
-        }
-        private global::System.String _City;
-        partial void OnCityChanging(global::System.String value);
-        partial void OnCityChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String State
-        {
-            get
-            {
-                return _State;
-            }
-            set
-            {
-                OnStateChanging(value);
-                ReportPropertyChanging("State");
-                _State = value;
-                ReportPropertyChanged("State");
-                OnStateChanged();
-            }
-        }
-        private global::System.String _State;
-        partial void OnStateChanging(global::System.String value);
-        partial void OnStateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ZIP
-        {
-            get
-            {
-                return _ZIP;
-            }
-            set
-            {
-                OnZIPChanging(value);
-                ReportPropertyChanging("ZIP");
-                _ZIP = value;
-                ReportPropertyChanged("ZIP");
-                OnZIPChanged();
-            }
-        }
-        private global::System.String _ZIP;
-        partial void OnZIPChanging(global::System.String value);
-        partial void OnZIPChanged();
+        private global::System.Int32 _EmailAddress_Contact;
+        partial void OnEmailAddress_ContactChanging(global::System.Int32 value);
+        partial void OnEmailAddress_ContactChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -541,6 +1173,347 @@ namespace LightSwitchApplication.Implementation
         #endregion
 
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "EmailAddress_Contact", "Contact")]
+        public Contact Contact
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.EmailAddress_Contact", "Contact").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.EmailAddress_Contact", "Contact").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Contact> ContactReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.EmailAddress_Contact", "Contact");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Contact>("LightSwitchApplication.EmailAddress_Contact", "Contact", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="PhoneNumber")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PhoneNumber : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PhoneNumber object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="phone">Initial value of the Phone property.</param>
+        /// <param name="phoneType">Initial value of the PhoneType property.</param>
+        /// <param name="phoneNumber_Contact">Initial value of the PhoneNumber_Contact property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        public static PhoneNumber CreatePhoneNumber(global::System.Int32 id, global::System.String phone, global::System.String phoneType, global::System.Int32 phoneNumber_Contact, global::System.Byte[] rowVersion)
+        {
+            PhoneNumber phoneNumber = new PhoneNumber();
+            phoneNumber.Id = id;
+            phoneNumber.Phone = phone;
+            phoneNumber.PhoneType = phoneType;
+            phoneNumber.PhoneNumber_Contact = phoneNumber_Contact;
+            phoneNumber.RowVersion = rowVersion;
+            return phoneNumber;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Phone
+        {
+            get
+            {
+                return _Phone;
+            }
+            set
+            {
+                OnPhoneChanging(value);
+                ReportPropertyChanging("Phone");
+                _Phone = value;
+                ReportPropertyChanged("Phone");
+                OnPhoneChanged();
+            }
+        }
+        private global::System.String _Phone;
+        partial void OnPhoneChanging(global::System.String value);
+        partial void OnPhoneChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PhoneType
+        {
+            get
+            {
+                return _PhoneType;
+            }
+            set
+            {
+                OnPhoneTypeChanging(value);
+                ReportPropertyChanging("PhoneType");
+                _PhoneType = value;
+                ReportPropertyChanged("PhoneType");
+                OnPhoneTypeChanged();
+            }
+        }
+        private global::System.String _PhoneType;
+        partial void OnPhoneTypeChanging(global::System.String value);
+        partial void OnPhoneTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PhoneNumber_Contact
+        {
+            get
+            {
+                return _PhoneNumber_Contact;
+            }
+            set
+            {
+                OnPhoneNumber_ContactChanging(value);
+                ReportPropertyChanging("PhoneNumber_Contact");
+                _PhoneNumber_Contact = value;
+                ReportPropertyChanged("PhoneNumber_Contact");
+                OnPhoneNumber_ContactChanged();
+            }
+        }
+        private global::System.Int32 _PhoneNumber_Contact;
+        partial void OnPhoneNumber_ContactChanging(global::System.Int32 value);
+        partial void OnPhoneNumber_ContactChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CreatedBy
+        {
+            get
+            {
+                return _CreatedBy;
+            }
+            set
+            {
+                OnCreatedByChanging(value);
+                ReportPropertyChanging("CreatedBy");
+                _CreatedBy = value;
+                ReportPropertyChanged("CreatedBy");
+                OnCreatedByChanged();
+            }
+        }
+        private global::System.String _CreatedBy;
+        partial void OnCreatedByChanging(global::System.String value);
+        partial void OnCreatedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Created
+        {
+            get
+            {
+                return _Created;
+            }
+            set
+            {
+                OnCreatedChanging(value);
+                ReportPropertyChanging("Created");
+                _Created = value;
+                ReportPropertyChanged("Created");
+                OnCreatedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Created;
+        partial void OnCreatedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnCreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ModifiedBy
+        {
+            get
+            {
+                return _ModifiedBy;
+            }
+            set
+            {
+                OnModifiedByChanging(value);
+                ReportPropertyChanging("ModifiedBy");
+                _ModifiedBy = value;
+                ReportPropertyChanged("ModifiedBy");
+                OnModifiedByChanged();
+            }
+        }
+        private global::System.String _ModifiedBy;
+        partial void OnModifiedByChanging(global::System.String value);
+        partial void OnModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Modified
+        {
+            get
+            {
+                return _Modified;
+            }
+            set
+            {
+                OnModifiedChanging(value);
+                ReportPropertyChanging("Modified");
+                _Modified = value;
+                ReportPropertyChanged("Modified");
+                OnModifiedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Modified;
+        partial void OnModifiedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnModifiedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "PhoneNumber_Contact", "Contact")]
+        public Contact Contact
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.PhoneNumber_Contact", "Contact").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.PhoneNumber_Contact", "Contact").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Contact> ContactReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("LightSwitchApplication.PhoneNumber_Contact", "Contact");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Contact>("LightSwitchApplication.PhoneNumber_Contact", "Contact", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
 
     #endregion

@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Contact">
+    Name="Address">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -24,20 +24,25 @@
         <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
-          <Hidden />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="LastName"
+        Name="AddressType"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
           <MaxLength
-            Value="255" />
+            Value="25" />
+          <SupportedValue
+            Value="Home" />
+          <SupportedValue
+            Value="Work" />
+          <SupportedValue
+            Value="Other" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="FirstName"
+        Name="Address1"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
@@ -45,43 +50,42 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="BirthDate"
-        PropertyType=":Date?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-          <Range
-            Minimum="01/01/1900" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Gender"
+        Name="Address2"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
-            Value="1" />
-          <SupportedValue
-            DisplayName="Female"
-            Value="F" />
-          <SupportedValue
-            DisplayName="Male"
-            Value="M" />
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="State"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ZIP"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="EmailAddresses"
-        Association="EmailAddress_Contact"
-        FromEnd="Contact"
-        ToEnd="EmailAddress" />
-      <NavigationProperty
-        Name="PhoneNumbers"
-        Association="PhoneNumber_Contact"
-        FromEnd="Contact"
-        ToEnd="PhoneNumber" />
-      <NavigationProperty
-        Name="Addresses"
+        Name="Contact"
         Association="Address_Contact"
-        FromEnd="Contact"
-        ToEnd="Address" />
+        FromEnd="Address"
+        ToEnd="Contact" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
@@ -140,14 +144,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Contacts"
+      Name="Addresses"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Contact" />
+      EntityType="Address" />
     <QueryOperation
-      Name="Contacts_Single"
-      ReturnType="Contact">
+      Name="Addresses_Single"
+      ReturnType="Address">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -173,7 +177,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Contacts" />
+            Member="Addresses" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -186,8 +190,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Contacts_SingleOrDefault"
-      ReturnType="Contact">
+      Name="Addresses_SingleOrDefault"
+      ReturnType="Address">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -213,7 +217,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Contacts" />
+            Member="Addresses" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -225,152 +229,20 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="EmailAddress_Contacts"
-      Association="EmailAddress_Contact">
-      <AssociationSetEnd
-        Name="EmailAddress"
-        EntitySet="EmailAddresses" />
-      <AssociationSetEnd
-        Name="Contact"
-        EntitySet="Contacts" />
-    </AssociationSet>
-    <AssociationSet
-      Name="PhoneNumber_Contacts"
-      Association="PhoneNumber_Contact">
-      <AssociationSetEnd
-        Name="PhoneNumber"
-        EntitySet="PhoneNumbers" />
-      <AssociationSetEnd
-        Name="Contact"
-        EntitySet="Contacts" />
-    </AssociationSet>
-    <AssociationSet
-      Name="Address_Contacts"
-      Association="Address_Contact">
-      <AssociationSetEnd
-        Name="Address"
-        EntitySet="Addresses" />
-      <AssociationSetEnd
-        Name="Contact"
-        EntitySet="Contacts" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="EmailAddress_Contact">
-    <AssociationEnd
-      Name="EmailAddress"
-      Multiplicity="Many"
-      EntityType="EmailAddress" />
-    <AssociationEnd
-      Name="Contact"
-      Multiplicity="One"
-      EntityType="Contact">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Cascade" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
   <DataService
     Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <AssociationSetMapping
-      AssociationSet="EmailAddress_Contacts">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="EmailAddress_Contacts" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[EmailAddress_Contacts]/Members[EmailAddress]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="EmailAddress_Contact" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[EmailAddress_Contacts]/Members[Contact]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="PhoneNumber_Contacts">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="PhoneNumber_Contacts" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[PhoneNumber_Contacts]/Members[PhoneNumber]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="PhoneNumber_Contact" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[PhoneNumber_Contacts]/Members[Contact]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="Address_Contacts">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="Address_Contacts" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Address_Contacts]/Members[Address]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Address_Contact" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Address_Contacts]/Members[Contact]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="Addresses">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="Address_Contact"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
   </DataService>
-  <Association
-    Name="PhoneNumber_Contact">
-    <AssociationEnd
-      Name="PhoneNumber"
-      Multiplicity="Many"
-      EntityType="PhoneNumber" />
-    <AssociationEnd
-      Name="Contact"
-      Multiplicity="One"
-      EntityType="Contact">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Cascade" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
-  <Association
-    Name="Address_Contact">
-    <AssociationEnd
-      Name="Address"
-      Multiplicity="Many"
-      EntityType="Address" />
-    <AssociationEnd
-      Name="Contact"
-      Multiplicity="One"
-      EntityType="Contact">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Cascade" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
 </ServiceApplication>

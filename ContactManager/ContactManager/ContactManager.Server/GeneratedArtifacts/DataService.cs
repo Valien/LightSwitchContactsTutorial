@@ -96,6 +96,114 @@ namespace LightSwitchApplication
         partial void Contacts_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Contact, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Inserting(global::LightSwitchApplication.EmailAddress entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Inserted(global::LightSwitchApplication.EmailAddress entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Updating(global::LightSwitchApplication.EmailAddress entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Updated(global::LightSwitchApplication.EmailAddress entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Deleting(global::LightSwitchApplication.EmailAddress entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Deleted(global::LightSwitchApplication.EmailAddress entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Validate(global::LightSwitchApplication.EmailAddress entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void EmailAddresses_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.EmailAddress, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Inserting(global::LightSwitchApplication.PhoneNumber entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Inserted(global::LightSwitchApplication.PhoneNumber entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Updating(global::LightSwitchApplication.PhoneNumber entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Updated(global::LightSwitchApplication.PhoneNumber entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Deleting(global::LightSwitchApplication.PhoneNumber entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Deleted(global::LightSwitchApplication.PhoneNumber entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Validate(global::LightSwitchApplication.PhoneNumber entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PhoneNumbers_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.PhoneNumber, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Inserting(global::LightSwitchApplication.Address entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Inserted(global::LightSwitchApplication.Address entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Updating(global::LightSwitchApplication.Address entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Updated(global::LightSwitchApplication.Address entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Deleting(global::LightSwitchApplication.Address entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Deleted(global::LightSwitchApplication.Address entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Validate(global::LightSwitchApplication.Address entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Addresses_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Address, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -202,6 +310,231 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Contact, bool>> filter = null;
                 d.Contacts_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.EmailAddress>
+                __EmailAddressesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.EmailAddress>(
+                    "EmailAddresses",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__EmailAddresses_Filter);
+            private static bool __EmailAddresses_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.EmailAddresses_CanInsert(ref result);
+                return result;
+            }
+            private static bool __EmailAddresses_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.EmailAddresses_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __EmailAddresses_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.EmailAddresses_CanDelete(ref result);
+                return result;
+            }
+            private static bool __EmailAddresses_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.EmailAddresses_CanRead(ref result);
+                return result;
+            }
+            private static void __EmailAddresses_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.EmailAddress e)
+            {
+                d.EmailAddresses_Inserting(e);
+            }
+            private static void __EmailAddresses_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.EmailAddress e)
+            {
+                d.EmailAddresses_Inserted(e);
+            }
+            private static void __EmailAddresses_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.EmailAddress e)
+            {
+                d.EmailAddresses_Updating(e);
+            }
+            private static void __EmailAddresses_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.EmailAddress e)
+            {
+                d.EmailAddresses_Updated(e);
+            }
+            private static void __EmailAddresses_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.EmailAddress e)
+            {
+                d.EmailAddresses_Deleting(e);
+            }
+            private static void __EmailAddresses_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.EmailAddress e)
+            {
+                d.EmailAddresses_Deleted(e);
+            }
+            private static void __EmailAddresses_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.EmailAddress e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.EmailAddresses_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.EmailAddress, bool>> __EmailAddresses_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.EmailAddress, bool>> filter = null;
+                d.EmailAddresses_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.PhoneNumber>
+                __PhoneNumbersEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.PhoneNumber>(
+                    "PhoneNumbers",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__PhoneNumbers_Filter);
+            private static bool __PhoneNumbers_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.PhoneNumbers_CanInsert(ref result);
+                return result;
+            }
+            private static bool __PhoneNumbers_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.PhoneNumbers_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __PhoneNumbers_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.PhoneNumbers_CanDelete(ref result);
+                return result;
+            }
+            private static bool __PhoneNumbers_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.PhoneNumbers_CanRead(ref result);
+                return result;
+            }
+            private static void __PhoneNumbers_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.PhoneNumber e)
+            {
+                d.PhoneNumbers_Inserting(e);
+            }
+            private static void __PhoneNumbers_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.PhoneNumber e)
+            {
+                d.PhoneNumbers_Inserted(e);
+            }
+            private static void __PhoneNumbers_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.PhoneNumber e)
+            {
+                d.PhoneNumbers_Updating(e);
+            }
+            private static void __PhoneNumbers_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.PhoneNumber e)
+            {
+                d.PhoneNumbers_Updated(e);
+            }
+            private static void __PhoneNumbers_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.PhoneNumber e)
+            {
+                d.PhoneNumbers_Deleting(e);
+            }
+            private static void __PhoneNumbers_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.PhoneNumber e)
+            {
+                d.PhoneNumbers_Deleted(e);
+            }
+            private static void __PhoneNumbers_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.PhoneNumber e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.PhoneNumbers_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.PhoneNumber, bool>> __PhoneNumbers_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.PhoneNumber, bool>> filter = null;
+                d.PhoneNumbers_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Address>
+                __AddressesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Address>(
+                    "Addresses",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Addresses_Filter);
+            private static bool __Addresses_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Addresses_CanInsert(ref result);
+                return result;
+            }
+            private static bool __Addresses_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Addresses_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __Addresses_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Addresses_CanDelete(ref result);
+                return result;
+            }
+            private static bool __Addresses_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Addresses_CanRead(ref result);
+                return result;
+            }
+            private static void __Addresses_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Address e)
+            {
+                d.Addresses_Inserting(e);
+            }
+            private static void __Addresses_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Address e)
+            {
+                d.Addresses_Inserted(e);
+            }
+            private static void __Addresses_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Address e)
+            {
+                d.Addresses_Updating(e);
+            }
+            private static void __Addresses_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Address e)
+            {
+                d.Addresses_Updated(e);
+            }
+            private static void __Addresses_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Address e)
+            {
+                d.Addresses_Deleting(e);
+            }
+            private static void __Addresses_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Address e)
+            {
+                d.Addresses_Deleted(e);
+            }
+            private static void __Addresses_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Address e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.Addresses_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Address, bool>> __Addresses_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Address, bool>> filter = null;
+                d.Addresses_Filter(ref filter);
                 return filter;
             }
             
